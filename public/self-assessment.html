@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stress-Level Self Assessment | MindEase</title>
+  <link rel="stylesheet" href="css/self_assessment.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-body">
+  <header class="page-header">
+    <div>
+      <h1 class="page-title">Stress Self-Assessment</h1>
+      <p class="subtitle">Answer honestly to understand how stressed you feel today.</p>
+    </div>
+    <div class="toolbar">
+      <a class="btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="card assessment-card">
+      <div id="progressContainer" class="progress-wrapper">
+        <div id="progressBar" class="progress-bar"></div>
+        <p id="progressText" class="small muted">Question 1 of 10</p>
+      </div>
+
+      <div id="quizContainer" class="quiz-box"></div>
+
+      <div id="resultContainer" class="result hidden">
+        <h3>Your Stress Level</h3>
+        <p id="resultText"></p>
+        <button id="restartBtn" class="btn" type="button">Take Again</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/self_assessment.js"></script>
+</body>
+</html>

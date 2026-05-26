@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relaxation Games | MindEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-body">
+  <header class="page-header">
+    <div>
+      <h1 class="page-title">Mini Games</h1>
+      <p class="subtitle" id="welcomeMessage">Choose a relaxing game to refresh your mind.</p>
+    </div>
+    <div class="toolbar">
+      <button class="btn ghost" type="button" id="toggleMusic">Play Music</button>
+      <a class="btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <section class="game-selection">
+    <button class="game-card" data-game="memory">
+      <h3>Memory Match</h3>
+      <p>Flip and match cards to build focus.</p>
+    </button>
+    <button class="game-card" data-game="bubblepop">
+      <h3>Bubble Pop</h3>
+      <p>Tap floating bubbles for a calming rhythm.</p>
+    </button>
+    <button class="game-card" data-game="clouds">
+      <h3>Catch the Clouds</h3>
+      <p>Move the basket to catch calming icons.</p>
+    </button>
+  </section>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/audio/calm_music.mp3.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="memoryModal" class="modal" aria-hidden="true">
+    <div class="modal-content modal-wide">
+      <button class="close" type="button" data-close="memory">&times;</button>
+      <h3>Memory Match</h3>
+      <div class="scoreboard" id="memoryScore">Score: 0</div>
+      <div class="highscore" id="memoryHigh">High Score: 0</div>
+      <div class="timer" id="memoryTimer"></div>
+      <div id="memoryArea"></div>
+      <p class="result" id="memoryResult"></p>
+    </div>
+  </div>
+
+  <div id="bubblepopModal" class="modal" aria-hidden="true">
+    <div class="modal-content modal-wide">
+      <button class="close" type="button" data-close="bubblepop">&times;</button>
+      <h3>Bubble Pop</h3>
+      <div class="scoreboard" id="bubblepopScore">Score: 0</div>
+      <div class="highscore" id="bubblepopHigh">High Score: 0</div>
+      <div class="timer" id="bubblepopTimer"></div>
+      <div id="bubblepopArea"></div>
+      <p class="result" id="bubblepopResult"></p>
+    </div>
+  </div>
+
+  <div id="cloudsModal" class="modal" aria-hidden="true">
+    <div class="modal-content modal-wide">
+      <button class="close" type="button" data-close="clouds">&times;</button>
+      <h3>Catch the Clouds</h3>
+      <div class="scoreboard" id="cloudsScore">Score: 0</div>
+      <div class="highscore" id="cloudsHigh">High Score: 0</div>
+      <div class="timer" id="cloudsTimer"></div>
+      <div id="cloudsArea"></div>
+      <p class="result" id="cloudsResult"></p>
+    </div>
+  </div>
+
+  <script src="js/games.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guided Breathing | MindEase</title>
+  <link rel="stylesheet" href="css/relaxation.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-body">
+  <header class="page-header">
+    <div>
+      <h1 class="page-title">Relaxation</h1>
+      <p class="subtitle">Follow the animation: inhale, hold, exhale.</p>
+    </div>
+    <div class="toolbar">
+      <a class="btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="card relax-card">
+      <div class="circle-container">
+        <div id="breathingCircle" class="breath-circle"></div>
+        <p id="phaseText" class="muted">Ready?</p>
+
+        <div class="timer-setup small">
+          <label for="timerInput">Duration (min):</label>
+          <input type="number" id="timerInput" min="1" max="30" value="2" />
+        </div>
+
+        <div class="music-select small">
+          <label for="musicSelect">Background:</label>
+          <select id="musicSelect">
+            <option value="assets/audio/calm_music.mp3.mp3">Calm Breeze</option>
+            <option value="assets/audio/forest_ambience.mp3">Forest Ambience</option>
+            <option value="assets/audio/ocean_waves.mp3">Ocean Waves</option>
+            <option value="assets/audio/soft_piano.mp3">Soft Piano</option>
+          </select>
+        </div>
+
+        <div class="buttons">
+          <button id="startBtn" class="btn" type="button">Start Breathing</button>
+          <button id="toggleMusicBtn" class="btn ghost" type="button">Music</button>
+        </div>
+      </div>
+
+      <audio id="bgMusic" loop></audio>
+
+      <section class="mini-game">
+        <h3>Focus Dot Mini-Game</h3>
+        <p class="muted">Train your attention by clicking the glowing dot.</p>
+        <button id="openGameBtn" class="btn" type="button">Open Mini-Game</button>
+      </section>
+    </div>
+  </main>
+
+  <div id="gameModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeModal" class="close" type="button">&times;</button>
+      <h3>Focus Dot Mini-Game</h3>
+      <h3 id="timeLeft" class="muted">Time Left: 15s</h3>
+      <p>Click the glowing dot as soon as it appears.</p>
+      <div id="gameArea" class="game-area"></div>
+      <p id="scoreText">Score: 0</p>
+      <button id="startGameBtn" class="btn" type="button">Start Game</button>
+    </div>
+  </div>
+
+  <script src="js/relaxation.js"></script>
+</body>
+</html>

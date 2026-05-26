@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mood Journal | MindEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-body">
+  <header class="page-header">
+    <div>
+      <h1 class="page-title">Mood Journal</h1>
+      <p class="subtitle">Log how you feel and track patterns over time.</p>
+    </div>
+    <div class="toolbar">
+      <a class="btn" href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <section class="journal-grid">
+    <div class="card">
+      <h3>Daily check-in</h3>
+      <label for="mood">Mood today</label>
+      <select id="mood">
+        <option value="">Select mood</option>
+        <option>Happy</option>
+        <option>Calm</option>
+        <option>Neutral</option>
+        <option>Sad</option>
+        <option>Stressed</option>
+      </select>
+      <label for="note">Journal note</label>
+      <textarea id="note" rows="4" placeholder="What made you feel this way?"></textarea>
+      <button id="saveEntryBtn" class="btn" type="button">Save entry</button>
+    </div>
+
+    <div class="card">
+      <h3>Mood trend</h3>
+      <canvas id="moodChart" width="420" height="220"></canvas>
+      <p class="muted small" id="moodChartStatus">Log a few entries to see your mood trend.</p>
+    </div>
+  </section>
+
+  <section class="entries" id="entries"></section>
+
+  <script src="js/journal.js"></script>
+</body>
+</html>

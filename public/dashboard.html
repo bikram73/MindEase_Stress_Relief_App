@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | MindEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dashboard-body">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">MindEase</div>
+      <span class="sidebar-tagline">Daily Digital Stress Companion</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-link active" href="dashboard.html">Dashboard</a>
+      <a class="nav-link" href="games.html">Mini Games</a>
+      <a class="nav-link" href="journal.html">Mood Journal</a>
+      <a class="nav-link" href="relaxation.html">Relaxation</a>
+      <a class="nav-link" href="self-assessment.html">Self-Assessment</a>
+      <a class="nav-link" href="tips.html">Tips & Resources</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button id="logoutBtn" class="ghost-btn" type="button">Reset Name</button>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header">
+      <div>
+        <h1 id="welcomeTitle">Welcome back</h1>
+        <p class="subtitle">Take a breath, check in, and choose a gentle next step.</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn" type="button" data-action="breathing">Start Breathing</button>
+        <button class="btn ghost" type="button" data-action="journal">Open Journal</button>
+      </div>
+    </header>
+
+    <section class="dashboard-grid">
+      <div class="card highlight-card">
+        <h3>Today at a glance</h3>
+        <div class="metric-row">
+          <div class="metric">
+            <span class="metric-label">Mood</span>
+            <span id="todayMood" class="metric-value">No check-in yet</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Stress score</span>
+            <span id="stressScore" class="metric-value">Not assessed</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Calm streak</span>
+            <span id="calmStreak" class="metric-value">0 days</span>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="pill" href="self-assessment.html">Run a stress check</a>
+          <a class="pill" href="relaxation.html">Start a timer</a>
+          <a class="pill" href="games.html">Play a quick game</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Quick actions</h3>
+        <div class="quick-actions">
+          <button class="btn" type="button" data-action="game">Play a game</button>
+          <button class="btn" type="button" data-action="relax">Guided relaxation</button>
+          <button class="btn" type="button" data-action="tips">Read tips</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Daily quote</h3>
+        <p id="dailyQuote" class="quote-text">Loading a calming thought...</p>
+        <span id="quoteAuthor" class="quote-author"></span>
+      </div>
+
+      <div class="card">
+        <h3>Mood trend</h3>
+        <canvas id="moodChart" width="420" height="180" aria-label="Mood trend chart"></canvas>
+        <p class="muted small" id="moodChartHint">Log moods to see your weekly trend.</p>
+      </div>
+
+      <div class="card">
+        <h3>Game progress</h3>
+        <ul id="gameScores" class="score-list"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Recent activity</h3>
+        <ul id="recentActivity" class="activity-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <div id="usernameModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h3>What should we call you?</h3>
+      <p class="muted">We only store this in your browser.</p>
+      <input type="text" id="usernameInput" placeholder="Your name" autocomplete="name" />
+      <button id="saveUsernameBtn" class="btn" type="button">Save name</button>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
